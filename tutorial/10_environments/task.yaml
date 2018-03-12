@@ -109,7 +109,7 @@ problems:
             you type into your shell ?
         limit: 0
         name: Supported environments
-        type: multiple-choice
+        type: multiple_choice
     q2:
         header: How is the INGInious environment name provided from the container
             ?
@@ -122,7 +122,7 @@ problems:
         error_message: While we suggest this naming convention, only the ``org.inginious.grading.name``
             label is used  by INGInious to determine the environment name.
         name: Environment names
-        type: multiple-choice
+        type: multiple_choice
     q3:
         choices:
         -   valid: true
@@ -136,7 +136,7 @@ problems:
                     docker build -t ingi/inginious-c-go /home/tux/go/Dockerfile
             feedback: The ``FOLDER_TO_DOCKERFILE`` argument is actually the path to
                 the folder containing your ``Dockerfile``.
-        type: multiple-choice
+        type: multiple_choice
         limit: 0
         header: You want to build a new ``go`` environment. The path to your *Dockerfile*
             is ``/home/tux/go/Dockerfile``. What would you type in yourterminal ?
@@ -150,7 +150,7 @@ problems:
                 the INGInious API. However, the ``org.inginious.grading.name`` still
                 must be defined for the new enviroment.
             text: No.
-        type: multiple-choice
+        type: multiple_choice
         name: Environment inheritance
         limit: 0
         header: Can you define a new environment ``lamp`` by inheriting from an existing

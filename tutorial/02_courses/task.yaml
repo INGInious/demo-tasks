@@ -116,7 +116,7 @@ problems:
             text: You check that students are allowed to register by themselves.
         limit: 0
         name: Groups/Teams composition
-        type: multiple-choice
+        type: multiple_choice
     q2:
         header: 'You want students to work together and need to choose between the
             teams or classrooms model for your course. The later is organized on different
@@ -134,7 +134,7 @@ problems:
                 they can collaborate with any other student following the course.
                 This is a common scheme yet.
             text: Teams.
-        type: multiple-choice
+        type: multiple_choice
         name: Student aggregation model
     q3:
         choices:
@@ -142,7 +142,7 @@ problems:
         -   valid: true
             text: In the administration *Danger zone*, you archive the course data,
                 so that past year are wiped and backup if needed later.
-        type: multiple-choice
+        type: multiple_choice
         limit: 0
         header: You're about to restart your course this semester and want all the
             student data to be cleaned while keeping the course and tasks unmodified
@@ -158,7 +158,7 @@ problems:
             text: All the classrooms submissions
         -   text: The submissions for a given task of a given team
             valid: true
-        type: multiple-choice
+        type: multiple_choice
         error_message: The statistics pages offer more possibilities.
         name: Statistics view
         limit: 0
