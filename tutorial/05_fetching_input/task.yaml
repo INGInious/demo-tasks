@@ -85,7 +85,7 @@ order: 4
 problems:
     studentupload:
         name: File upload
-        type: code-file
+        type: file
         header: This box is used to upload a file and has *problem id* ``studentupload``.
             Please select any file on your disk that meet the requirements. Please
             note that it will be stored within the submission.

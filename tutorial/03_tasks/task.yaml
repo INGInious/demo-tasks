@@ -53,7 +53,7 @@ context: |-
 
     .. class:: text-justify
 
-        Except the ``mcq`` environment used for multiple-choice questions, all the INGInious environments will start a container when launching the test suite. These containers can be preconfigured with the following parameters:
+        Except the ``mcq`` environment used for multiple_choice questions, all the INGInious environments will start a container when launching the test suite. These containers can be preconfigured with the following parameters:
 
         - **(Hard) timeout** : The timeout value is the maximum CPU (computation) time allowed for the task. Once this threshold is reached, the container is shut down and the student is returned a *Time out* feedback. The hard timeout is the maximum wall (human) time allowed for the task.
         - **Memory** : This is the maximum amount of RAM the container can allocate. If this value is evaluated as too high by the INGInious agent, it will warn you at the container launch.
@@ -146,7 +146,7 @@ problems:
         multiple: true
         limit: 0
         name: Grading weight
-        type: multiple-choice
+        type: multiple_choice
     q2:
         choices:
         -   text: No, MCQ are statically checked, no student code is run and no ``run``
@@ -159,7 +159,7 @@ problems:
                 checks and automatically generates feedback based on the task configuration.
             text: Yes, you'll need to create a ``run`` file that parse all data and
                 displays the appropriate feedback to the student.
-        type: multiple-choice
+        type: multiple_choice
         name: Grading environments
         header: The *Container setup* tab allows you to set some limitation parameters
             for code execution. Does it apply to the built-in ``mcq`` environment
@@ -181,7 +181,7 @@ problems:
             text: 'No'
             feedback: 'This is correct. You can however put some HTML code in your
                 context inside a ``.. raw:: html`` directive.'
-        type: multiple-choice
+        type: multiple_choice
         limit: 0
         name: Task and problems contexts
     q4:
@@ -193,7 +193,7 @@ problems:
         -   text: You can set the task inacessible when the deadline is over.
             feedback: 'You do not need this: you can specify an accessibility range'
         limit: 0
-        type: multiple-choice
+        type: multiple_choice
         header: How can you set a deadline on a given task ?
     q5:
         choices:
@@ -206,7 +206,7 @@ problems:
         -   valid: true
             text: It can be any executable file.
         name: The run file
-        type: multiple-choice
+        type: multiple_choice
         limit: 0
         header: Container-based grading environments require an executable ``run``
             script at the root of your task files folder to initiate the tests. What
@@ -222,7 +222,7 @@ problems:
                 task files and use the ``.. image::`` directive to add it to the task
                 context
             valid: true
-        type: multiple-choice
+        type: multiple_choice
         header: You want to display the UML scheme of a class to be implemented by
             the student as an image on the task context. This image file has been
             specifically created for that assignment. How do you do that ?
