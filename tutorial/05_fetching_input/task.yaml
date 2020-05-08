@@ -58,7 +58,7 @@ context: |-
     `````````````````
     .. class:: text-justify
 
-        The ``parsetemplate`` API is used with a template file as argument as well as the optional ``--output OUTPUTFILE`` argument if the output file shoud be different than the input file.
+        The ``parsetemplate`` API is used with a template file as argument as well as the optional ``--output OUTPUTFILE`` argument if the output file should be different than the input file.
 
         For instance, the following command will parse the ``template.py`` file into a new ``studentcode.py`` file:
 
