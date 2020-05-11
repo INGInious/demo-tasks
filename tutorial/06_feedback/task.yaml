@@ -7,7 +7,7 @@ context: |-
 
             In this section you'll see how to actually grade student submissions by providing a result, score, and detailed feedback. Feedback should be provided for at least the whole task (or assignment), and can be provided for each of the subproblem too.
 
-            Detailed feedback is one of the main INGInious assets. INGInious is not designed to coldly return success or failed messages but to also to provide an extensive feedback for the students to understand their mistake and improve their submissions.
+            Detailed feedback is one of the main INGInious assets. INGInious is not designed to coldly return success or failed messages but also to provide an extensive feedback for the students to understand their mistake and improve their submissions.
 
         .. container:: col-md-2 text-center
 
@@ -26,7 +26,7 @@ context: |-
 
         The task result is **mandatory** and is provided via the ``feedback-result`` API which takes as positional argument the status and accepts an optional argument the specific *problem id* ``--id PROBLEMID`` to which the status apply.
 
-        The result is used by the frontends to indicate wether it is considered as succeeded or not, and wether the test execution failed or not.
+        The result is used by the frontends to indicate whether it is considered as succeeded or not, and whether the test execution failed or not.
 
         The available results are listed below:
 
@@ -54,7 +54,7 @@ context: |-
 
         The score is provided via the ``feedback-grade`` API which takes the score as unique positional argument. This value is expressed in percents, and a dot (``.``) is used as decimal mark.
 
-        For instance, fto set a score of 75.4% for the submission:
+        For instance, to set a score of 75.4% for the submission:
 
         .. code-block:: bash
 
@@ -67,7 +67,7 @@ context: |-
 
         The feedback message is the way you provide students with an extensive feedback that can be provided for the whole task or each of the subproblems. Based on the result of your test suite, you'll be able to tell the students what is going wrong with the submission and give some indication to unlock the situation.
 
-        Feedback messages use the reStruturedText syntax and |latex| syntax for mathematical expressions, as for problem descriptions, and are provided through the ``feedback-msg`` API.
+        Feedback messages use the reStructuredText syntax and |latex| syntax for mathematical expressions, as for problem descriptions, and are provided through the ``feedback-msg`` API.
 
         .. |latex| raw:: html latex
 
