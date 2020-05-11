@@ -5,7 +5,7 @@ context: |-
 
         .. container:: col-md-10 text-justify
 
-            The more information you'll provide to students, the more they will understand what is going wrong with their work and be able to improve it. A bunch of textual information may be somewhat limitating, or boring for the students.
+            The more information you'll provide to students, the more they will understand what is going wrong with their work and be able to improve it. A bunch of textual information may be somewhat limiting, or boring for the students.
 
             You may want to return complex feedback, such as code snippet to highlight some errors, formatted terminal output, links to some material to review to better understand the assignment concepts, or even generated images or files based on the student input.
 
@@ -66,7 +66,7 @@ context: |-
 
     .. class:: text-justify
 
-        Returning images into submission feedback can be achieved using the ``rst-image`` API which print the reStructuredText code on standard output. This command takes the filepath to the generated image file inside the *grading container* as well as an optional ``--format`` paramater for specifying the image type if different from the file extension.
+        Returning images into submission feedback can be achieved using the ``rst-image`` API which print the reStructuredText code on standard output. This command takes the filepath to the generated image file inside the *grading container* as well as an optional ``--format`` parameter for specifying the image type if different from the file extension.
 
         For instance, to add the ``result.jpg`` image file to the feedback:
 
@@ -80,7 +80,7 @@ context: |-
 
     .. class:: text-justify
 
-        You may need to add some indentation level when using the above APIs, for instance, to add a clode block inside a bulleted list. This is achieved using the ``rst-indent`` API. This reads the text to indent from standard input or from the optional arguments and outputs the indented text on the standard output. The complete list of arguments are :
+        You may need to add some indentation level when using the above APIs, for instance, to add a code block inside a bulleted list. This is achieved using the ``rst-indent`` API. This reads the text to indent from standard input or from the optional arguments and outputs the indented text on the standard output. The complete list of arguments are :
 
         --escape
             interprets backslash escapes
