@@ -5,7 +5,7 @@ context: |-
 
         .. container:: col-md-10 text-justify
 
-            You have now reached the end of this tutorial and should be able to design assignments using INGInious. Some things remain uncovered like natch jobs and plugins. Those are advanced features for the superadministrator; please refer to the complete documentation.
+            You have now reached the end of this tutorial and should be able to design assignments using INGInious. Some things remain uncovered like batch jobs and plugins. Those are advanced features for the superadministrator; please refer to the complete documentation.
 
             In this last section you'll find out how to add some environments to your INGInious installation. Indeed, our default environment only provides Python 2/3 along with some standard command-line tools. **Please note that this is only accessible to the superadministrator, who has access to the INGInious installation.**
 
