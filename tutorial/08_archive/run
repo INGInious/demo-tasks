@@ -8,7 +8,7 @@ chmod +x thecode
 ./thecode
 ERROR_CODE=$?
 
-if [ -f /.__output/generated.txt ]; then
+if [ -f /archive/generated.txt ]; then
     feedback-result success
     feedback-msg -m "OK. Now go and download your submission files in the administration pages and check for the file."
     feedback-grade 100
