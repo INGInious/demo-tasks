@@ -5,7 +5,7 @@ context: |-
 
         .. container:: col-md-10 text-justify
 
-            Sometimes, when designing your assigments on INGInious, you may face some issues because you use a different software set on your local machine than the available environments, or because you did not take a specific student input into account. As your script are run at the server side, this may be difficult to find the solution only with a set of input/output.
+            Sometimes, when designing your assignments on INGInious, you may face some issues because you use a different software set on your local machine than the available environments, or because you did not take a specific student input into account. As your script are run at the server side, this may be difficult to find the solution only with a set of input/output.
 
             INGInious comes with an embedded debugging facility that will help you fix some undesired behaviour that may arise while running your test suite.
 
