@@ -1,5 +1,7 @@
 accessible: true
 author: The INGInious authors
+categories: []
+contact_url: ''
 context: |-
     .. container:: row
 
@@ -24,7 +26,7 @@ context: |-
 
     .. class:: text-justify
 
-        The task result is **mandatory** and is provided via the ``feedback-result`` API which takes as positional argument the status and accepts an optional argument the specific *problem id* ``--id PROBLEMID`` to which the status apply.
+        The task result is **mandatory** and is provided via the ``feedback-result`` API which takes as positional argument the status and accepts an optional argument the specific *problem id* ``--id PROBLEMID`` to which the status apply. Even if you call it to specify result for subproblems, you must call it at least once for the entire problem without specifying subproblem.
 
         The result is used by the frontends to indicate whether it is considered as succeeded or not, and whether the test execution failed or not.
 
@@ -38,7 +40,7 @@ context: |-
 
         INGInious internal errors results in a submission stored with no ``result`` field attached. An internal error status is associated with those submissions in order to differentiate the error origins.
 
-        For instance, to set the task global feedback to ``failed`` and the ``thecode`` problem to ``success``:
+        For instance, to set the task global feedback to ``failed`` and the ``thecode`` subproblem to ``success``:
 
         .. code-block:: bash
 
@@ -96,27 +98,31 @@ context: |-
     .. class:: text-justify
 
         Use the code input defined below along with the sandbox to find out in details the feedback APIs features. The feedback you produce in the sandbox will be directly returned as the submission feedback.
-environment: default
+environment_id: default
+environment_parameters:
+    run_cmd: ''
+    limits:
+        time: '3'
+        hard_time: ''
+        memory: '100'
+environment_type: docker
 evaluate: best
+file: ''
 groups: false
-limits:
-    time: '3'
-    memory: '100'
-    output: '2'
-name: 6. Writing feedback
+input_random: '0'
+name: 8. Writing feedback
 network_grading: false
-order: 5
+order: 7
 problems:
     studentcode:
+        optional: 'on'
+        default: ''
+        name: Optional student code
+        language: ''
         header: This optional field can be used inside the sandbox below as *problem
             id* ``studentcode``.
-        language: ''
-        optional: true
-        name: Optional student code
         type: code
     thecode:
-        name: Sandbox
-        language: shell
         header: |-
             Use this code box as a sandbox for testing both the feedback APIs. **Here you'll write an executable script**, so do not forget beginning your code, for instance, by:
 
@@ -125,6 +131,9 @@ problems:
                 #!/bin/bash
 
             The displayed feedback will reflect the APIs you invoke.
+        default: ''
+        name: Sandbox
+        language: shell
         type: code
 stored_submissions: 0
 submission_limit:
