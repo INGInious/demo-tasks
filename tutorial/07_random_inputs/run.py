@@ -7,7 +7,7 @@ Values = [8, 18, 32, 50, 72, 98]
 Value=Values[RandomIndex]
 
 #Get the student answer and the correct answer
-Student = int(get_input("test"))
+Student = int(get_input("student_code"))
 Solution = int(math.sqrt(Value/2))
 
 #As an example, the two answers can be accessed from command line via temporary environment variables

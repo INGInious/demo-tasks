@@ -57,7 +57,7 @@ context: |+
             Value=Values[RandomIndex]
 
             #Get the student answer and the correct answer
-            Student = int(get_input("test"))
+            Student = int(get_input("student_code"))
             Solution = int(math.sqrt(Value/2))
 
             #As an example, the two answers can be accessed from command line via temporary environment variables
@@ -112,14 +112,14 @@ name: 7. Random parameters
 network_grading: false
 order: 6
 problems:
-    test:
+    student_code:
+        name: Enter the X value.
+        type: code_single_line
         default: ''
         header: |
-            Simply enter the numerical value for x. For example 6.
+            Simply enter the numerical value for x. For example 6. This box has problem id: ``student_code``.
 
             Notice everytime you reload this page, the equation changes in the task description and the solution is adapted.
-        name: Simple equation
-        type: code_single_line
 regenerate_input_random: 'on'
 stored_submissions: 0
 submission_limit:
