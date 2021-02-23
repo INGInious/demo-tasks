@@ -47,7 +47,7 @@ context: |-
 
         The Users_management_ , Tasks_ and Submissions_ pages allow you to manage students/groups/audiences registrations, course tasks and students submissions respectively.
 
-        - `Users_management`_ page allows you to enroll/unenroll users from your course. It also displays some basic statistics on your students and the teaching staff that can be expanded by clicking on *View submissions*. It also allows to manage groups and audiences with the possibility to upload/download the structure as a yuml file as described in documentation.
+        - `Users_management`_ page allows you to enroll/unenroll users from your course. It also displays some basic statistics on your students and the teaching staff that can be expanded by clicking on *View submissions*. It also allows to manage groups and audiences with the possibility to upload/download the structure as a yaml file as described in documentation.
 
         - Tasks_ page allows you to edit the course tasks using the graphical editor where you can, for example, change their order. It also allow to open submissions for a specific task with the **view submissions** button or to modify a task with the **Edit task** button.
 
@@ -63,7 +63,7 @@ context: |-
     Marketplace
     ```````````
 
-    The Marketplace_ allows to import available courses into your own Inginious deployment by copying their files. This could be very useful for new teachers willing to learn by inspecting already built courses.
+    The Marketplace_ allows to import available courses into your own INGInious deployment by copying their files. This could be very useful for new teachers willing to learn by inspecting already built courses.
 
     Note, by default, these imported courses will not be displayed to students. You can change this in the course settings later.
 
@@ -108,26 +108,26 @@ problems:
     q2:
         choices:
         -   text: 'You create two audiences in the Users management page and fill
-                them with students or upload a structure with a yuml file as described
+                them with students or upload a structure with a yaml file as described
                 in documentation. Then you create groups and add audience restriction
                 to the groups. Finally, you allow students to register in groups with
                 the course settings page. '
             valid: true
-        -   text: Inginious does not allow this.
+        -   text: INGInious does not allow this.
             feedback: Of course it does !
         -   feedback: Students can not create groups. You have to create groups to
                 allow students to populate them. Furthermore, creating audiences is
                 a good start but you have to restrict groups registration based on
                 these two audiences.
             text: 'You create two audiences in the Users management page and fill
-                them with students or upload a structure with a yuml file as described
+                them with students or upload a structure with a yaml file as described
                 in documentation. Then you allow students to register in groups with
                 the course settings page. '
         name: Students audiences
         type: multiple_choice
         header: |-
-            You have a large number of students, some are engineer students and some are computer science students.
-            You want students to join teams to work together but you don't want students from different studies to mix together.
+            You have a large number of students, some are engineering students and some are computer science students.
+            You want students to join teams to work together but you don't want students from different curricula to mix together.
             How can you achieve that?
         limit: 0
     q3:

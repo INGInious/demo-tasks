@@ -243,14 +243,14 @@ problems:
     q7:
         choices:
         -   text: In the task page, you select Combinatory test in the task dispenser.
-                Then you create two selections, one for analysis and one for algebra.
+                Then you create two sections, one for analysis and one for algebra.
                 You put the corresponding tasks in the two sections and configure
                 them to show only one task.
             valid: true
         -   text: In the task page, you select Table of content in the task dispenser.
-                Then you create two selections, one for Analysis and one for algebra.
+                Then you create two sectionss, one for Analysis and one for algebra.
         -   text: In the task page, you select Combinatory test in the task dispenser.
-                Then you create two selections, one with analysis tasks and one with
+                Then you create two sections, one with analysis tasks and one with
                 algerab tasks.
         limit: 0
         type: multiple_choice

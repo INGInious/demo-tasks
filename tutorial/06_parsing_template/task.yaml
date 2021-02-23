@@ -76,9 +76,9 @@ context: |+
          #!/bin/bash
 
         parsetemplate --output student/code.py template.py
-        Output=$(run_student python3 student/code.py)
+        output=$(run_student python3 student/code.py)
 
-        if [ "$Output" = "success" ]; then
+        if [ "$output" = "success" ]; then
             feedback-result success
             feedback-msg -em "Your code is correct"
         else
@@ -88,7 +88,7 @@ context: |+
 
     .. class:: text-justify
 
-    ``Template.py`` is parsed and the result, ``code.py``,is placed in the ``student`` directory to be accessible within the *student container*. Then it is simply run and the output is checked to grade the submission.
+    ``template.py`` is parsed and the result, ``code.py``,is placed in the ``student`` directory to be accessible within the *student container*. Then it is simply run and the output is checked to grade the submission.
 
     Let's take a tour
     -----------------

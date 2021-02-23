@@ -1,10 +1,10 @@
 #!/bin/bash
 
 parsetemplate --output student/code.py template.py
-Output=$(run_student python3 student/code.py)
+output=$(run_student python3 student/code.py)
 
 
-if [ "$Output" = "success" ]; then
+if [ "$output" = "success" ]; then
     feedback-result success
 	feedback-msg -em "Your code is correct"
 else
