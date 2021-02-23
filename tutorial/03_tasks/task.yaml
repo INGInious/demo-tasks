@@ -248,7 +248,7 @@ problems:
                 them to show only one task.
             valid: true
         -   text: In the task page, you select Table of content in the task dispenser.
-                Then you create two sectionss, one for Analysis and one for algebra.
+                Then you create two sections, one for Analysis and one for algebra.
         -   text: In the task page, you select Combinatory test in the task dispenser.
                 Then you create two sections, one with analysis tasks and one with
                 algerab tasks.
