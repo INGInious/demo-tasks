@@ -1,5 +1,7 @@
 accessible: true
 author: The INGInious authors
+categories: []
+contact_url: ''
 context: |-
     .. container:: row
 
@@ -34,27 +36,33 @@ context: |-
 
     #. Click on the *>_* button to start a debugging session.
     #. If prompted, copy and paste the command line to connect to the server in a local shell and type the given password.
-    #. Once connected, you are able to do anything you want. To run the test suite normally, just type ``./run``.
+    #. Once connected, you are able to do anything you want. To run the test suite normally, just type ``./run``. You will be able to diretly inspect the outputs or potential error messages.
     #. When you are done, type ``exit`` to close the remote SSH session. Feedback will be displayed as if the submission was done normally.
 
     If something goes wrong here, you'll be able to run your test suite command by command.
-environment: default
+environment_id: default
+environment_parameters:
+    run_cmd: ''
+    limits:
+        time: '3'
+        hard_time: ''
+        memory: '100'
+environment_type: docker
 evaluate: best
+file: ''
 groups: false
-limits:
-    time: '3'
-    memory: '100'
-    output: '2'
-name: 9. Debugging tasks
+input_random: '0'
+name: 11. Debugging tasks
 network_grading: false
-order: 8
+order: 10
 problems:
     thecode:
+        header: This unique optional input box is provided with *problem id*  ``thecode``.
+        optional: 'on'
+        default: ''
         name: ''
-        optional: true
         language: ''
         type: code
-        header: This unique optional input box is provided with *problem id*  ``thecode``.
 stored_submissions: 0
 submission_limit:
     amount: -1

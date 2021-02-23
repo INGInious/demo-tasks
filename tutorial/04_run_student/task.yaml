@@ -1,5 +1,6 @@
 accessible: true
 author: The INGInious authors
+categories: []
 context: |-
     .. container:: row
 
@@ -13,7 +14,7 @@ context: |-
 
                 #!/bin/bash
 
-                getinput "thecode" > student/student_code.py
+                getinput thecode > student/student_code.py
                 output=$(python3 student/student_code.py)
 
                 if [ "$output" = "Hello World!" ]; then
@@ -93,7 +94,7 @@ context: |-
 
             #!/bin/bash
 
-            getinput "thecode" > student/student_code.py
+            getinput thecode > student/student_code.py
             output=$(run_student python3 student/student_code.py)
 
             if [ "$output" = "Hello World!" ]; then
@@ -103,32 +104,36 @@ context: |-
                 feedback-msg -em "Your program displayed : $output"
             fi
 
-        Please note that the *student container* will be started with the same working directory as the *grading container*. You may need to change it to ``/student`` before to allow students to perform IO in the working directory.
+        Please note that the *student container* will have access to the ``/student`` directory but not to the *grading container* working space for isolation. The ``getinput`` API, described in next task, should generally put student codes in the ``/student`` directory to allow *student container* to access them.
 
     Retry to break the code
     ```````````````````````
     .. class:: text-justify
 
-        The current task ``run`` script has been corrected to reflect the need for student process isolation. Try to break the grading script again !
+        The current task ``run`` script has been corrected to reflect the need for student process isolation. Try to break the grading script again ! You will not be able to modify the feedback or result anymore !
 environment: default
 evaluate: best
+file: ''
 groups: false
+input_random: '0'
 limits:
-    time: '3'
-    memory: '100'
     output: '2'
+    memory: '100'
+    time: '3'
 name: 4. Running student programs
 network_grading: false
 order: 3
 problems:
     thecode:
-        name: Hello World !
         language: python
+        default: ''
+        name: Hello World !
         header: |-
             Here you are asked to provide a basic Python 3 program displaying ``Hello World!`` on standard output.
 
             *Hint :* to display something on standard output, use the built-in ``print`` method.
         type: code
+run_cmd: ''
 stored_submissions: 0
 submission_limit:
     amount: -1

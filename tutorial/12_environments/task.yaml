@@ -1,5 +1,6 @@
 accessible: true
 author: The INGInious authors
+categories: []
 context: |-
     .. container:: row
 
@@ -83,14 +84,16 @@ context: |-
     Below you'll find a small MCQ to review and better understand how to make additional INGInious environments.
 environment: mcq
 evaluate: best
+file: ''
 groups: false
+input_random: '0'
 limits:
     time: '30'
-    memory: '100'
     output: '2'
-name: 10. Additional environments
+    memory: '100'
+name: 12. Additional environments
 network_grading: false
-order: 9
+order: 11
 problems:
     q1:
         choices:
@@ -105,24 +108,24 @@ problems:
                 .. code-block:: shell
 
                     docker pull cpp
+        type: multiple_choice
+        limit: 0
         header: You want to download the provided ``cpp`` environment. What should
             you type into your shell ?
-        limit: 0
         name: Supported environments
-        type: multiple_choice
     q2:
-        header: How is the INGInious environment name provided from the container
-            ?
-        limit: 0
-        choices:
-        -   text: Via the ``org.inginious.grading.name`` label.
-            valid: true
-        -   text: Via the container tag suffix.
-        -   text: Both.
         error_message: While we suggest this naming convention, only the ``org.inginious.grading.name``
             label is used  by INGInious to determine the environment name.
+        choices:
+        -   valid: true
+            text: Via the ``org.inginious.grading.name`` label.
+        -   text: Via the container tag suffix.
+        -   text: Both.
         name: Environment names
+        limit: 0
         type: multiple_choice
+        header: How is the INGInious environment name provided from the container
+            ?
     q3:
         choices:
         -   valid: true
@@ -136,25 +139,26 @@ problems:
                     docker build -t ingi/inginious-c-go /home/tux/go/Dockerfile
             feedback: The ``FOLDER_TO_DOCKERFILE`` argument is actually the path to
                 the folder containing your ``Dockerfile``.
+        name: Building a new environment
         type: multiple_choice
-        limit: 0
         header: You want to build a new ``go`` environment. The path to your *Dockerfile*
             is ``/home/tux/go/Dockerfile``. What would you type in yourterminal ?
-        name: Building a new environment
+        limit: 0
     q4:
+        limit: 0
         choices:
-        -   text: Yes.
-            valid: true
+        -   valid: true
+            text: Yes.
         -   feedback: You actually can. As the ``ingi/inginious-c-php`` container
                 inherits from ``ingi/inginious-c-base``, your new container will contain
                 the INGInious API. However, the ``org.inginious.grading.name`` still
                 must be defined for the new enviroment.
             text: No.
-        type: multiple_choice
-        name: Environment inheritance
-        limit: 0
         header: Can you define a new environment ``lamp`` by inheriting from an existing
             environment container, such as ``ingi/inginious-c-php`` ?
+        name: Environment inheritance
+        type: multiple_choice
+run_cmd: ''
 stored_submissions: 0
 submission_limit:
     amount: -1

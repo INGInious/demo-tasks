@@ -1,5 +1,7 @@
 accessible: true
 author: The INGInious authors
+categories: []
+contact_url: ''
 context: |-
     .. container:: row
 
@@ -7,7 +9,7 @@ context: |-
 
             Tasks, or activities, or assignments, form the course content. Each INGInious task is composed of a problem set graded at the same time (run on a predefined environment) and possibly depending on each other. A task is linked to a course and is identified with a *course id/task id* pair.
 
-            Tasks can be created by course administrators by specifying a new *task id* on the Tasks_ page.
+            Tasks can be created by course administrators by specifying a new *task id* on the Tasks_ page. This page also allows to modify the tasks order and to setup the tasks dispenser. This last tool allows to select between two display options for the tasks. The default one is the ``Table of content`` mode where you can create a selection with tasks that will be displayed to the students. The second option is the ``Combinatory test`` that allows to define sections among which only a specified amount of tasks will be displayed randomly.
 
             .. _Tasks: /admin/tutorial/tasks
 
@@ -42,7 +44,7 @@ context: |-
 
         .. container:: col-md-2 text-center
 
-            .. image:: 03_tasks/docker.png
+            .. image:: $common/docker.png
               :height: 100px
 
         .. container:: col-md-10 text-justify
@@ -88,6 +90,8 @@ context: |-
         - ``/student`` : This folder is used in combination with the ``run_student`` API to provide another level of isolation while running the tests.
           More information about this folder will be provided further in this tutorial.
 
+          Note: The ``$common/public`` and ``$common/student`` directories at the root of the course directory also allow to share files for all the tasks of the same course.
+
     Description
     -----------
 
@@ -111,27 +115,35 @@ context: |-
 
               print "Hello World!"
 
+    The task description can also include images such as the docker logo included in the text above:
+
+       .. code-block:: rst
+
+                .. image:: $common/docker.png
+                  :height: 100px
+
+    Notice the image can be located in the specific task directory, for example with the path ``03_tasks/public/docker.png`` or within a ``$common/public`` directory at the root of the course directory to allow every task to access these files.
+
     Let's take a tour
     -----------------
 
     .. class:: text-justify
 
         Browse the INGInious task edition tabs to discover the full set of features. Once you've made that, answer to the small MCQ below to check your understanding and learn more.
-environment: mcq
+environment_id: mcq
+environment_parameters: {}
+environment_type: mcq
 evaluate: best
+file: ''
 groups: false
-limits:
-    time: '3'
-    memory: '100'
-    output: '2'
+input_random: '0'
 name: 3. Tasks
 network_grading: false
 order: 2
 problems:
     q1:
-        header: Your course contains two tasks ``task1`` and ``task2``. You want them
-            to weight respectively for 20% and 80% of the final student course score.
-            How can you do that ?
+        multiple: true
+        type: multiple_choice
         choices:
         -   text: The *grading weight* of ``task1`` and ``task2`` can be set respectively
                 to ``2`` and ``8``.
@@ -143,90 +155,110 @@ problems:
                 weight* to some float value. This value will be used to compute a
                 weighted average.
             text: You can't.
-        multiple: true
-        limit: 0
+        header: Your course contains two tasks ``task1`` and ``task2``. You want them
+            to weight respectively for 20% and 80% of the final student course score.
+            How can you do that ?
         name: Grading weight
-        type: multiple_choice
+        limit: 0
     q2:
         choices:
-        -   text: No, MCQ are statically checked, no student code is run and no ``run``
-                file is required.
-            valid: true
-            feedback: Indeed. This means that student code cannot be checked under
+        -   feedback: Indeed. This means that student code cannot be checked under
                 the ``mcq`` environment. However, you are able to use the MCQ input
                 data under the Docker environments.
-        -   feedback: This is not true. The built-in MCQ environments performs static
-                checks and automatically generates feedback based on the task configuration.
-            text: Yes, you'll need to create a ``run`` file that parse all data and
+            text: No, MCQ are statically checked, no student code is run and no ``run``
+                file is required.
+            valid: true
+        -   text: Yes, you'll need to create a ``run`` file that parse all data and
                 displays the appropriate feedback to the student.
-        type: multiple_choice
+            feedback: This is not true. The built-in MCQ environments performs static
+                checks and automatically generates feedback based on the task configuration.
         name: Grading environments
+        type: multiple_choice
         header: The *Container setup* tab allows you to set some limitation parameters
             for code execution. Does it apply to the built-in ``mcq`` environment
             ?
         limit: 0
     q3:
+        choices:
+        -   text: 'Yes'
+            feedback: 'By default, only reStructuredText is allowed for context description.
+                You can however put some HTML code in your context inside a ``.. raw::
+                html`` directive.'
+        -   feedback: 'This is correct. You can however put some HTML code in your
+                context inside a ``.. raw:: html`` directive.'
+            valid: true
+            text: 'No'
         header: |-
             .. code:: HTML
 
                 <p style="text-align: center;">This is a new paragraph.</p>
 
             Is this a correct context description ?
-        choices:
-        -   feedback: 'By default, only reStructuredText is allowed for context description.
-                You can however put some HTML code in your context inside a ``.. raw::
-                html`` directive.'
-            text: 'Yes'
-        -   valid: true
-            text: 'No'
-            feedback: 'This is correct. You can however put some HTML code in your
-                context inside a ``.. raw:: html`` directive.'
         type: multiple_choice
         limit: 0
         name: Task and problems contexts
     q4:
-        name: Deadlines
-        choices:
-        -   text: You can setup the task with custom accessibility and specify at
-                least an ending date.
-            valid: true
-        -   text: You can set the task inacessible when the deadline is over.
-            feedback: 'You do not need this: you can specify an accessibility range'
         limit: 0
+        choices:
+        -   valid: true
+            text: You can setup the task with custom accessibility and specify at
+                least an ending date.
+        -   feedback: 'You do not need this: you can specify an accessibility range'
+            text: You can set the task inacessible when the deadline is over.
         type: multiple_choice
         header: How can you set a deadline on a given task ?
+        name: Deadlines
     q5:
+        limit: 0
         choices:
         -   feedback: Not necessary. Moreover, the file should begin with ``#!/bin/env
                 bash`` even if this is not inherent to Bash.
             text: It must be a Bash script.
-        -   text: It must be a Python script.
-            feedback: Not necessary. Moreover, the file should begin with ``#!/bin/env
+        -   feedback: Not necessary. Moreover, the file should begin with ``#!/bin/env
                 python`` even if this is not inherent to Python.
+            text: It must be a Python script.
         -   valid: true
             text: It can be any executable file.
-        name: The run file
         type: multiple_choice
-        limit: 0
+        name: The run file
         header: Container-based grading environments require an executable ``run``
             script at the root of your task files folder to initiate the tests. What
             is the particularity of that file ?
     q6:
         name: Serving static files
-        choices:
-        -   text: You host the file on an external server and add the image using
-                the ``.. image::`` directive to the task context.
-            feedback: You can, but this is not necessary. You can serve files from
-                your task folder, even using MCQ environment.
-        -   text: You place the image file into the ``public`` subdirectory of your
-                task files and use the ``.. image::`` directive to add it to the task
-                context
-            valid: true
-        type: multiple_choice
         header: You want to display the UML scheme of a class to be implemented by
             the student as an image on the task context. This image file has been
             specifically created for that assignment. How do you do that ?
         limit: 0
+        choices:
+        -   feedback: You can, but this is not necessary. You can serve files from
+                your task folder, even using MCQ environment.
+            text: You host the file on an external server and add the image using
+                the ``.. image::`` directive to the task context.
+        -   text: You place the image file into the ``public`` subdirectory of your
+                task files or in the ``$commno/public`` directory and use the ``..
+                image::`` directive to add it to the task context
+            valid: true
+        type: multiple_choice
+    q7:
+        choices:
+        -   text: In the task page, you select Combinatory test in the task dispenser.
+                Then you create two sections, one for analysis and one for algebra.
+                You put the corresponding tasks in the two sections and configure
+                them to show only one task.
+            valid: true
+        -   text: In the task page, you select Table of content in the task dispenser.
+                Then you create two sections, one for Analysis and one for algebra.
+        -   text: In the task page, you select Combinatory test in the task dispenser.
+                Then you create two sections, one with analysis tasks and one with
+                algerab tasks.
+        limit: 0
+        type: multiple_choice
+        name: Task dispenser
+        header: |-
+            You have a large set of tasks files available, including 5 tasks on math analysis and 5 tasks on algebra.
+            You want, for a test, every student to receive one random analysis task and one random algebra task.
+            How can you achieve this?
 stored_submissions: 0
 submission_limit:
     amount: -1

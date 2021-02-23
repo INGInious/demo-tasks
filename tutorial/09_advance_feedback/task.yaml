@@ -1,5 +1,7 @@
 accessible: true
 author: The INGInious authors
+categories: []
+contact_url: ''
 context: |-
     .. container:: row
 
@@ -72,7 +74,7 @@ context: |-
 
         .. code-block:: bash
 
-            rst-image result.jpg | feedback -a
+            rst-image result.jpg | feedback-msg -a
 
 
     The ``rst-indent`` API
@@ -97,33 +99,51 @@ context: |-
 
             cat myfile.java | rst-code --language java | rst-indent --indent-char "    " | feedback-msg -a
 
+
+    The ``Tag`` API
+    ---------------
+
+    .. class:: text-justify
+
+       To write advance feedback you may need to know precisely what went wrong in the student solution, for example in the case of student code implementation. The Tags can make this easier. Indeed, you can create tags in advance in the Tag_ page with an id, a description, the option to show it to students and tags categories. These tags can then be set to True based on the student inputs directly in the grading script code and allow to provide more precise feedbacks.
+
+       .. _`Tag`: /admin/tutorial/tags
+
+       .. code-block:: python
+
+            set_tag("my_tag", True)
+
     Let's take a tour
     -----------------
 
     .. class:: text-justify
 
         Use the code input defined below along with the sandbox to find out in details the reStructuredText APIs features. A ``logo.png`` file is provided at the task folder root. The feedback you produce in the sandbox will be directly returned as the submission feedback.
-environment: default
+environment_id: default
+environment_parameters:
+    run_cmd: ''
+    limits:
+        time: '3'
+        hard_time: ''
+        memory: '100'
+environment_type: docker
 evaluate: best
+file: ''
 groups: false
-limits:
-    time: '3'
-    memory: '100'
-    output: '2'
-name: 7. Writing advanced feedback
+input_random: '0'
+name: 9. Writing advanced feedback
 network_grading: false
-order: 6
+order: 8
 problems:
     studentcode:
+        optional: 'on'
+        default: ''
+        name: Optional student code
+        language: ''
         header: This optional field can be used inside the sandbox below as *problem
             id* ``studentcode``.
-        language: ''
-        optional: true
-        name: Optional student code
         type: code
     thecode:
-        name: Sandbox
-        language: shell
         header: |-
             Use this code box as a sandbox for testing both the feedback APIs. **Here you'll write an executable script**, so do not forget beginning your code, for instance, by:
 
@@ -132,6 +152,9 @@ problems:
                 #!/bin/bash
 
             The displayed feedback will reflect the APIs you invoke.
+        default: ''
+        name: Sandbox
+        language: shell
         type: code
 stored_submissions: 0
 submission_limit:

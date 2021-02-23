@@ -14,7 +14,7 @@ if [ -f /archive/generated.txt ]; then
     feedback-grade 100
 elif [ $ERROR_CODE -eq 0 ]; then
 	feedback-result failed
-    feedback-msg -m "It seems the file cannot not be found. Did you use the \`\`archive\`\` API correctly ?"
+    feedback-msg -m "It seems the generated.txt file cannot not be found. Did you use the \`\`archive\`\` API correctly ?"
     feedback-grade 0
 else
 	feedback-result failed
