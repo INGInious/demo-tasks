@@ -35,6 +35,7 @@ dispenser_data:
         10_archive: 9
         11_ssh_debug: 10
         12_environments: 11
+        13_ssh_student: 12
     title: List of exercises
 lti_url: ''
 tags:
